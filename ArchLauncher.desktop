@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Game;
+Comment[ru_RU]=Независимый лаунчер Minecraft
+Comment=Независимый лаунчер Minecraft
+Exec=python3 /home/david/arch_launcher.py
+GenericName[ru_RU]=
+GenericName=
+Icon=/home/david/images.png
+MimeType=
+Name[ru_RU]=Arch Launcher
+Name=Arch Launcher
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-KDE-SubstituteUID=false
+X-KDE-Username=
