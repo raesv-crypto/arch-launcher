@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arch Launcher — Open Source Minecraft Launcher</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fdfdfd;
+            color: #232323;
+        }
+        header {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .brand-name {
+            font-size: 1.1rem;
+            font-family: monospace;
+            font-weight: bold;
+            color: #555;
+            background-color: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        h1 {
+            margin: 0 0 5px 0;
+            font-size: 2.2rem;
+        }
+        .subtitle {
+            color: #555;
+            font-size: 1.1rem;
+            margin: 0 0 15px 0;
+        }
+        .badges {
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #444;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: monospace;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .badge-green {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 35px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        code, pre {
+            background-color: #f5f5f5;
+            font-family: monospace;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        pre {
+            padding: 15px;
+            overflow-x: auto;
+            border: 1px solid #e5e5e5;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .btn-group {
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #24292e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #1a1e22;
+            text-decoration: none;
+        }
+        .btn-blue {
+            background-color: #0056b3;
+        }
+        .btn-blue:hover {
+            background-color: #004085;
+        }
+        .lang-switcher {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .lang-switcher:hover {
+            background: #e5e5e5;
+        }
+        .lang-en, .lang-ru {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="brand-name">arch-launcher</div>
+            <button class="lang-switcher" onclick="toggleLang()">EN / RU</button>
+        </div>
+        
+        <h1>arch-launcher</h1>
+        
+        <div class="subtitle lang-en">Lightweight and independent Minecraft launcher script with Tkinter graphical interface.</div>
+        <div class="subtitle lang-ru">Легковесный и независимый скрипт-запускатор Minecraft с графическим интерфейсом Tkinter.</div>
+        
+        <div class="badges">
+            <span class="badge badge-green">Open Source</span>
+            <span class="badge">Platform: Unix/Linux</span>
+            <span class="badge">Language: Python</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- О ПРОЕКТЕ -->
+        <h2 class="lang-en">About the Project</h2>
+        <h2 class="lang-ru">О проекте</h2>
+        
+        <p class="lang-en"><b>arch-launcher</b> is a fully open-source project built on KISS principles for Unix-like systems (Linux, macOS, BSD). It provides a clean, bloat-free tool to start the game without forced Microsoft account integration or tracking.</p>
+        <p class="lang-ru"><b>arch-launcher</b> — это полностью открытый (Open Source) проект, созданный по принципу KISS для Unix-подобных систем (Linux, macOS, BSD). Он предоставляет чистую альтернативу без лишнего веса, убирая необходимость обязательной привязки Microsoft-аккаунта и слежки.</p>
+
+        <!-- ОСОБЕННОСТИ -->
+        <h2 class="lang-en">Key Features</h2>
+        <h2 class="lang-ru">Особенности архитектуры</h2>
+        
+        <ul>
+            <li class="lang-en"><b>Pure Python & Tkinter:</b> Native graphical interface. The application uses very few resources and starts instantly.</li>
+            <li class="lang-ru"><b>Чистый Python и Tkinter:</b> Родной графический интерфейс. Программа потребляет минимум ресурсов и запускается мгновенно.</li>
+            
+            <li class="lang-en"><b>Single-file structure:</b> The project is distributed as a single <code>.py</code> script, making it simple to audit, modify on the fly, and extend.</li>
+            <li class="lang-ru"><b>Один исходный файл:</b> Проект представляет собой один файл <code>.py</code>, который легко читать, изменять на лету и настраивать под себя.</li>
+            
+            <li class="lang-en"><b>KISS Concept:</b> No pre-installed modloaders (Forge/Fabric) by default. The launcher leaves full control over game files and directory structures to the user.</li>
+            <li class="lang-ru"><b>KISS-концепт:</b> Отсутствие предустановленных загрузчиков модов (Forge/Fabric) по умолчанию. Лаунчер оставляет пользователю полный контроль над файлами игры.</li>
+        </ul>
+
+        <!-- ЗАПУСК -->
+        <h2 class="lang-en">Quick Start</h2>
+        <h2 class="lang-ru">Быстрый старт</h2>
+        
+        <p class="lang-en">1. Install the required library for managing game files:</p>
+        <p class="lang-ru">1. Установите официальную библиотеку для работы с файлами игры:</p>
+        <pre>pip install minecraft-launcher-lib</pre>
+        
+        <p class="lang-en">2. Clone the repository to your computer:</p>
+        <p class="lang-ru">2. Склонируйте репозиторий к себе на компьютер:</p>
+        <pre>git clone https://github.com/raesv-crypto/arch-launcher</pre>
+
+        <p class="lang-en">3. Navigate to the project directory and run the launcher:</p>
+        <p class="lang-ru">3. Перейдите в папку проекта и запустите лаунчер:</p>
+        <pre>cd arch-launcher<br>python arch_launcher.py</pre>
+
+        <!-- РАЗРАБОТКА -->
+        <h2 class="lang-en">Development & Forks</h2>
+        <h2 class="lang-ru">Разработка и форки</h2>
+        
+        <p class="lang-en">The source code is entirely open. You are free to modify it, create forks, adapt it for other operating systems, or contribute back to the project.</p>
+        <p class="lang-ru">Исходный код проекта полностью открыт. Вы можете свободно использовать его, создавать свои форки, адаптировать под другие операционные системы или предлагать улучшения.</p>
+
+        <!-- КНОПКИ -->
+        <div class="btn-group">
+            <a href="https://github.com/raesv-crypto/arch-launcher" class="btn btn-blue" target="_blank">💻 GitHub Repository</a>
+        </div>
+    </main>
+
+    <script>
+        let currentLang = 'en';
+
+        function detectLanguage() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            if (userLang.startsWith('ru')) {
+                currentLang = 'ru';
+            } else {
+                currentLang = 'en';
+            }
+            updateVisibility();
+        }
+
+        function toggleLang() {
+            currentLang = (currentLang === 'en') ? 'ru' : 'en';
+            updateVisibility();
+        }
+
+        function updateVisibility() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const ruElements = document.querySelectorAll('.lang-ru');
+
+            if (currentLang === 'ru') {
+                enElements.forEach(el => el.style.display = 'none');
+                ruElements.forEach(el => el.style.display = 'block');
+                document.querySelectorAll('li.lang-ru').forEach(el => el.style.display = 'list-item');
+            } else {
+                ruElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                document.querySelectorAll('li.lang-en').forEach(el => el.style.display = 'list-item');
+            }
+        }
+
+        detectLanguage();
+    </script>
+
+</body>
+</html>
